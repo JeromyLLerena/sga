@@ -1,15 +1,24 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App\Firemans;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\User;
+use App\Http\Controllers\Controller;
+
+use App\Services\App\FiremanManagementService;
 
 class FiremanController extends Controller
 {
+	protected $fireman_management_service;
+
+	public function __construct(FiremanManagementService $fireman_management_service)
+	{
+		$this->fireman_management_service = $fireman_management_service;
+	}
+
 	public function showCreate()
 	{
 		return view('firemans.create');
@@ -17,7 +26,6 @@ class FiremanController extends Controller
 
 	public function create(Request $request)
 	{
-		$user = new User;
 
 		$data = [
 			'name' => $request->get('name'),
@@ -26,17 +34,15 @@ class FiremanController extends Controller
 			'last_name' => $request->get('last_name')
 		];
 
-		$user->create($data);
+		$this->fireman_management_service->save($data);
 
-		return redirect()->route('overview');
+		return redirect()->route('app.firemans.overview');
 	}
 
 	public function showOverview()
 	{
-		$user = new User;
-
 		$data = [
-			'users' => $user->all()
+			'users' => $this->fireman_management_service->all()
 		];
 
 		return view('firemans.overview', $data);

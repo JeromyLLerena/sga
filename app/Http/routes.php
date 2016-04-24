@@ -16,10 +16,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('login', ['as' => 'login', 'uses' => 'LoginController@getLogin']);
-Route::post('login', ['as' => 'login', 'uses' => 'LoginController@postLogin']);
 
-Route::get('create', ['as' => 'create', 'uses' => 'FiremanController@showCreate']);
-Route::post('create', ['as' => 'create', 'uses' => 'FiremanController@create']);
+Route::group(['as' => 'app', 'namespace' => 'App'], function(){
+	Route::group(['as' => '.firemans', 'prefix' => 'firemans', 'namespace' => 'Firemans'], function(){
+		Route::get('create', ['as' => '.create', 'uses' => 'FiremanController@showCreate']);
+		Route::post('create', ['as' => '.create', 'uses' => 'FiremanController@create']);
 
-Route::get('overview', ['as' => 'overview', 'uses' => 'FiremanController@showOverview']);
+		Route::get('overview', ['as' => '.overview', 'uses' => 'FiremanController@showOverview']);
+	});
+});

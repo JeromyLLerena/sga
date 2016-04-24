@@ -3,7 +3,7 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-<form method="POST" class="form-horizontal" action="{{route('create')}}">
+<form method="POST" class="form-horizontal" action="{{route('app.firemans.create')}}">
 	{!! csrf_field() !!}
 	<div class="panel panel-default">
 		<div class="panel-heading">
