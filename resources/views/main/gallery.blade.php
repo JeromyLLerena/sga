@@ -6,12 +6,12 @@
     <meta name="description" content="">
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <title>Adventure time: Dashboard</title>
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/adventure-time-theme-responsive.css">
-    <link rel="stylesheet" href="/css/adventure-time-theme.css">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('css/adventure-time-theme-responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('css/adventure-time-theme.css')}}">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -41,7 +41,7 @@
           <ul class="sidebar-menu">
             <p class="text-center">
               <a href="profile">
-                <img src="/img/profile.jpg" class="img-circle" width="60">
+                <img src="{{asset('/img/profile.jpg')}}" class="img-circle" width="60">
               </a>
             </p>
             <h5 class="text-center">Panel de Control</h5>
@@ -89,7 +89,7 @@
                 <div class="project">
                   <div class="photo-wrapper">
                     <div class="photo">
-                      <a class="fancybox" href="img/portfolio/port04.jpg"><img class="img-responsive" src="/img/portfolio/port04.jpg" alt=""></a>
+                      <a class="fancybox" href="{{asset('img/portfolio/port04.jpg')}}"><img class="img-responsive" src="{{asset('/img/portfolio/port04.jpg')}}" alt=""></a>
                     </div>
                     <div class="overlay"></div>
                   </div>
@@ -102,7 +102,7 @@
                 <div class="project">
                   <div class="photo-wrapper">
                     <div class="photo">
-                      <a class="fancybox" href="img/portfolio/port05.jpg"><img class="img-responsive" src="/img/portfolio/port05.jpg" alt=""></a>
+                      <a class="fancybox" href="{{asset('img/portfolio/port05.jpg')}}"><img class="img-responsive" src="{{asset('/img/portfolio/port05.jpg')}}" alt=""></a>
                     </div>
                     <div class="overlay"></div>
                   </div>
@@ -115,7 +115,7 @@
                 <div class="project">
                   <div class="photo-wrapper">
                     <div class="photo">
-                      <a class="fancybox" href="img/portfolio/port06.jpg"><img class="img-responsive" src="/img/incendio.jpg" alt=""></a>
+                      <a class="fancybox" href="{{asset('img/portfolio/port06.jpg')}}"><img class="img-responsive" src="{{asset('/img/incendio.jpg')}}" alt=""></a>
                     </div>
                     <div class="overlay"></div>
                   </div>
@@ -130,7 +130,7 @@
                 <div class="project">
                   <div class="photo-wrapper">
                     <div class="photo">
-                      <a class="fancybox" href="img/portfolio/port01.jpg"><img class="img-responsive" src="/img/portfolio/port01.jpg" alt=""></a>
+                      <a class="fancybox" href="{{asset('img/portfolio/port01.jpg')}}"><img class="img-responsive" src="{{asset('/img/portfolio/port01.jpg')}}" alt=""></a>
                     </div>
                     <div class="overlay"></div>
                   </div>
@@ -143,7 +143,7 @@
                 <div class="project">
                   <div class="photo-wrapper">
                     <div class="photo">
-                      <a class="fancybox" href="img/portfolio/port02.jpg"><img class="img-responsive" src="/img/portfolio/port02.jpg" alt=""></a>
+                      <a class="fancybox" href="{{asset('img/portfolio/port02.jpg')}}"><img class="img-responsive" src="{{asset('/img/portfolio/port02.jpg')}}" alt=""></a>
                     </div>
                     <div class="overlay"></div>
                   </div>
@@ -156,7 +156,7 @@
                 <div class="project">
                   <div class="photo-wrapper">
                     <div class="photo">
-                      <a class="fancybox" href="img/portfolio/port03.jpg"><img class="img-responsive" src="/img/portfolio/port03.jpg" alt=""></a>
+                      <a class="fancybox" href="{{asset('img/portfolio/port03.jpg')}}"><img class="img-responsive" src="{{asset('/img/portfolio/port03.jpg')}}" alt=""></a>
                     </div>
                     <div class="overlay"></div>
                   </div>
@@ -171,7 +171,7 @@
                 <div class="project">
                   <div class="photo-wrapper">
                     <div class="photo">
-                      <a class="fancybox" href="img/portfolio/port04.jpg"><img class="img-responsive" src="/img/portfolio/port04.jpg" alt=""></a>
+                      <a class="fancybox" href="{{asset('img/portfolio/port04.jpg')}}"><img class="img-responsive" src="{{asset('/img/portfolio/port04.jpg')}}" alt=""></a>
                     </div>
                     <div class="overlay"></div>
                   </div>
@@ -184,7 +184,7 @@
                 <div class="project">
                   <div class="photo-wrapper">
                     <div class="photo">
-                      <a class="fancybox" href="img/portfolio/port05.jpg"><img class="img-responsive" src="/img/portfolio/port05.jpg" alt=""></a>
+                      <a class="fancybox" href="{{asset('img/portfolio/port05.jpg')}}"><img class="img-responsive" src="{{asset('/img/portfolio/port05.jpg')}}" alt=""></a>
                     </div>
                     <div class="overlay"></div>
                   </div>
@@ -197,7 +197,7 @@
                 <div class="project">
                   <div class="photo-wrapper">
                     <div class="photo">
-                      <a class="fancybox" href="img/portfolio/port06.jpg"><img class="img-responsive" src="/img/portfolio/port06.jpg" alt=""></a>
+                      <a class="fancybox" href="{{asset('img/portfolio/port06.jpg')}}"><img class="img-responsive" src="{{asset('/img/portfolio/port06.jpg')}}" alt=""></a>
                     </div>
                     <div class="overlay"></div>
                   </div>
@@ -211,8 +211,8 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/common-scripts.js"></script>
+    <script src="{{asset('js/jquery.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/common-scripts.js')}}"></script>
   </body>
 </html>

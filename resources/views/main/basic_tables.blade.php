@@ -6,12 +6,12 @@
     <meta name="description" content="">
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <title>Sistema de Gestion de Alertas</title>
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/adventure-time-theme.css">
-    <link rel="stylesheet" href="/css/adventure-time-theme-responsive.css">   
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('css/adventure-time-theme.css')}}">
+    <link rel="stylesheet" href="{{asset('css/adventure-time-theme-responsive.css')}}">   
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -41,7 +41,7 @@
           <ul class="sidebar-menu">
             <p class="text-center">
               <a href="profile">
-                <img src="/img/profile.jpg" class="img-circle" width="60">
+                <img src="{{asset('/img/profile.jpg')}}" class="img-circle" width="60">
               </a>
             </p>
             <h5 class="text-center">Panel de Control</h5>
@@ -222,8 +222,8 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/common-scripts.js"></script>
+    <script src="{{asset('js/jquery.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/common-scripts.js')}}"></script>
   </body>
 </html>
