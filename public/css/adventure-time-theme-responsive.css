@@ -1,0 +1,12 @@
+/*Inserta tu Codigo Responsive*/
+@media screen and (max-width: 480px) {
+	.sidebar-closed #sidebar {
+    margin-left: -200px;
+	}
+	.box0 p {
+		font-size: 1.5em;
+	}
+	.main-chart .box0:hover p {
+		color: #FE0000;
+	}
+}
