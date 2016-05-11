@@ -33,3 +33,9 @@ Route::group(['as' => 'app', 'namespace' => 'App'], function(){
 		Route::get('login', ['as' => '.login', 'uses' => 'MainController@login']);
 	});
 });
+
+Route::group(['as' => 'api', 'namespace' => 'Api', 'prefix' => 'api'], function(){
+	Route::group(['as' => '.alerts', 'prefix' => 'alerts', 'namespace' => 'Alert'], function(){
+		Route::post('/', ['as' => 'send', 'uses' => 'AlertController@create']);
+	});
+});
