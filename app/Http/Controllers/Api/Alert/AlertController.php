@@ -30,7 +30,7 @@ class AlertController extends Controller
 		$data = [
 			'VC_IMEI' => $request->get('imei'),
 			'IN_ID_TIPO' => $request->get('type'),
-			'IN_NUM_HERIDOS' => $request->get('affected_persons_range'),
+			'VC_NUM_HERIDOS' => $request->get('affected_persons_range'),
 			'VC_COORDENADA' => $request->get('coord_x') . ',' . $request->get('coord_y'),
 			'DT_FECHA' => Carbon::now()->toDateString()
 		];
