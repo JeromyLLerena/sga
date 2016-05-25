@@ -32,6 +32,8 @@ Route::group(['as' => 'app', 'namespace' => 'App'], function(){
 		Route::get('gallery', ['as' => '.gallery', 'uses' => 'MainController@gallery']);
 		Route::get('login', ['as' => '.login', 'uses' => 'MainController@login']);
 	});
+
+	Route::get('map/{alert_id}', ['as' => '.map', 'uses' => 'Alert\AlertController@showMap']);
 });
 
 Route::group(['as' => 'api', 'namespace' => 'Api', 'prefix' => 'api'], function(){

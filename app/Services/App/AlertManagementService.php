@@ -22,4 +22,9 @@ class AlertManagementService
 	{
 		return $this->alert_rep->all();
 	}
+
+	public function find($id)
+	{
+		return $this->alert_rep->find($id);
+	}
 }

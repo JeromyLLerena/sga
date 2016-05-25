@@ -63,4 +63,9 @@ class AlertRepository
 
 		return (object) $alert->toArray();
 	}
+
+	public function find($id)
+	{
+		return (object) $this->model->where('IN_ID_ALERTA', $id)->first()->toArray();
+	}
 }

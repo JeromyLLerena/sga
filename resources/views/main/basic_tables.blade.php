@@ -137,16 +137,27 @@
                       <td><a href="">Delegar</a> <a href="">Borrar</a></td>
                     </tr>
                     <tr>
-                      <td>Amenaza de explosivo</td>
-                      <td>15-04-2016 <br>6.04pm</td>
-                      <td>Los Olivos</td>
-                      <td><a href="">Ver</a></td>
-                      <td>4</td>
+
+                    @foreach($alerts as $alert)
+                      <td>
+                        @if ($alert->IN_ID_TIPO == 1)
+                          Incendio
+                        @elseif($alert->IN_ID_TIPO == 2)
+                         Amenaza de bomba
+                        @elseif($alert->IN_ID_TIPO == 3)
+                          Accidente automovilístico
+                        @endif
+                      </td>
+                      <td>{{$alert->DT_FECHA}}</td>
+                      <td> </td>
+                      <td><a href="{{route('app.map', $alert->IN_ID_ALERTA)}}">Ver</a></td>
+                      <td>{{$alert->IN_NUM_HERIDOS}}</td>
                       <td><span class="label label-danger label-mini">En cola</span></td>
                       <td>Alta</td>
                       <td>..........</td>
                       <td><a href="">Delegar</a> <a href="">Borrar</a></td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div><!--/content-panel -->
