@@ -43,8 +43,12 @@ class AlertRepository
 			$alert->VC_COORDENADA = $input->VC_COORDENADA;
 		}
 
-		if (property_exists($input, 'IN_NUM_HERIDOS')) {
-			$alert->IN_NUM_HERIDOS = $input->IN_NUM_HERIDOS;
+		if (property_exists($input, 'VC_NUM_HERIDOS')) {
+			$alert->VC_NUM_HERIDOS = $input->VC_NUM_HERIDOS;
+		}
+
+		if (property_exists($input, 'VC_COMENTARIO')) {
+			$alert->VC_COMENTARIO = $input->VC_COMENTARIO;
 		}
 
 		if (property_exists($input, 'VC_IMEI')) {

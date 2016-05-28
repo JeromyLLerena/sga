@@ -11,6 +11,7 @@ use Carbon\Carbon as Carbon;
 
 use App\Services\App\AlertManagementService;
 use App\Services\App\ImeiManagementService;
+use App\Http\Requests\Api\Alert\AlertCreateValidation;
 
 class AlertController extends Controller
 {
@@ -25,12 +26,13 @@ class AlertController extends Controller
 		$this->alert_management_service = $alert_management_service;
 		$this->imei_management_service  = $imei_management_service;
 	}
-	public function create(Request $request)
+	public function create(AlertCreateValidation $request)
 	{
 		$data = [
 			'VC_IMEI' => $request->get('imei'),
 			'IN_ID_TIPO' => $request->get('type'),
 			'VC_NUM_HERIDOS' => $request->get('affected_persons_range'),
+			'VC_COMENTARIO' => $request->get('comment'),
 			'VC_COORDENADA' => $request->get('coord_x') . ',' . $request->get('coord_y'),
 			'DT_FECHA' => Carbon::now()->toDateString()
 		];

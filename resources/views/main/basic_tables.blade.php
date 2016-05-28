@@ -151,7 +151,7 @@
                       <td>{{$alert->DT_FECHA}}</td>
                       <td> </td>
                       <td><a href="{{route('app.map', $alert->IN_ID_ALERTA)}}">Ver</a></td>
-                      <td>{{$alert->IN_NUM_HERIDOS}}</td>
+                      <td>{{$alert->VC_NUM_HERIDOS}}</td>
                       <td><span class="label label-danger label-mini">En cola</span></td>
                       <td>Alta</td>
                       <td>..........</td>
