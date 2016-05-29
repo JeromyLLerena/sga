@@ -25,7 +25,6 @@ class AlertController extends Controller
 		$alert = $this->alert_management_service->find($alert_id);
 
 		$coords = explode(",", $alert->VC_COORDENADA);
-
 		$view = view('main.map')->with('coords', $coords)->render();
 		return $view;
 		//return response()->json(["success" => true, "html" => $view]);

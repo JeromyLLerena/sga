@@ -1,7 +1,7 @@
 <?php
 
 $config = array();
-    $config['center'] = 'auto';
+    $config['center'] = $coords[0] . ',' . $coords[1];
     $config['onboundschanged'] = 'if (!centreGot) {
             var mapCentre = map.getCenter();
             marker_0.setOptions({

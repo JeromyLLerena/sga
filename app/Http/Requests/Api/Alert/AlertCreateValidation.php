@@ -10,8 +10,8 @@ class AlertCreateValidation extends ApiValidation
 		return [
 			'imei'                   => ['required', 'digits:15'],
 			'type'                   => ['exists:TA_TIPO,IN_ID_TIPO'],
-			'coord_x'                => [ 'numeric', 'float_between:-90,90'],
-			'coord_y'                => [ 'numeric', 'float_between:-180,180'],
+			'coord_x'                => ['numeric', 'float_between:-90,90'],
+			'coord_y'                => ['numeric', 'float_between:-180,180'],
 			'affected_persons_range' => ['required'],
 			'comment'                => ['string'],
 			'photo'                  => ['Image']
