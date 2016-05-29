@@ -41,7 +41,7 @@ class AlertController extends Controller
 		}
 
 		if ($this->alert_management_service->save($data)) {
-			return response()->json(['success' => ['message' => 'La alerta ha sido enviada satisfactoriamente.']], 201);
+			return response()->json(['success' => ['message' => 'The alert has been sent successfully.']], 201);
 		} else {
 			return response()->json(['error' => ['message' => 'Ha ocurrido un error.']], 500);
 		}
