@@ -1,15 +1,18 @@
-/* MODAL - LOGIN */
-// $(document).ready(function() {
-// 	$("#myModal").hide();
-	
-// 	$("#openBtn").click(function() {
-// 		$("#myModal").modal(toggle);
-// 	});
-	
-// 	$("body").click(function() {
-//     	$("#myModal").hide();
-// 	});
-// });
-$(function () {
-    $('#datetimepicker1').datetimepicker();
+var res;
+var link = $('.alert-map');
+
+link.click(function(){
+var alert_id = link.data('id');
+console.log(alert_id);
+	$.ajax({
+		type: 'GET',
+		url: '/map/' + alert_id,
+		dataType: 'json',
+		success: function(response){
+			$('#alert_map_modal').modal('show');
+			res = response.html;
+			$('.modal-body').html(res);
+		}
+	});
 });
+

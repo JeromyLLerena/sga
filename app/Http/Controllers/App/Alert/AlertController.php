@@ -26,7 +26,8 @@ class AlertController extends Controller
 
 		$coords = explode(",", $alert->VC_COORDENADA);
 		$view = view('main.map')->with('coords', $coords)->render();
-		return $view;
-		//return response()->json(["success" => true, "html" => $view]);
+		//return $view;
+		return response()->json(["success" => true, "html" => $view]);
+		//return response()->view('main.map', ['coords' => $coords]);
 	}
 }

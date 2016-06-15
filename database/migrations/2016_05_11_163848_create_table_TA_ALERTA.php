@@ -17,10 +17,11 @@ class CreateTableTAALERTA extends Migration
 			$table->date('DT_FECHA');
 			$table->string('VC_RUTA_FOTO', 300)->nullable();
 			$table->string('VC_COORDENADA', 30);
-			$table->integer('IN_NUM_HERIDOS');
+			$table->string('VC_NUM_HERIDOS', 20);
 			$table->string('VC_IMEI', 35);
 			$table->char('CH_VISTO', 1)->nullable();
 			$table->integer('IN_ID_TIPO')->unsigned();
+			$table->string('VC_COMENTARIO', 70)->nullable();
 		});
 	}
 

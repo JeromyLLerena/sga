@@ -16,6 +16,10 @@ Route::get('/', function () {
 });
 
 
+Route::get('modal/{id}', function($id){
+	return view('alert.modal', ['id' => $id]);
+});
+
 
 Route::group(['as' => 'app', 'namespace' => 'App'], function(){
 	Route::group(['as' => '.firemans', 'prefix' => 'firemans', 'namespace' => 'Firemans'], function(){

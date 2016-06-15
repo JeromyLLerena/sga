@@ -150,7 +150,11 @@
                       </td>
                       <td>{{$alert->DT_FECHA}}</td>
                       <td> </td>
-                      <td><a href="{{route('app.map', $alert->IN_ID_ALERTA)}}">Ver</a></td>
+                      <td>
+                          <a href="#" data-id="{{$alert->IN_ID_ALERTA}}" rel="{{$alert->IN_ID_ALERTA}}" class="alert-map" id="link-alert-{{$alert->IN_ID_ALERTA}}" data-toggle="modal" data-target="#alert_map_modal">
+                            Ver
+                          </a>
+                      </td>
                       <td>{{$alert->VC_NUM_HERIDOS}}</td>
                       <td><span class="label label-danger label-mini">En cola</span></td>
                       <td>Alta</td>
@@ -232,9 +236,24 @@
       </section><!-- /MAIN CONTENT -->
   </section>
 
+<!-- Modal -->
+<div id="alert_map_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Show map</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="{{asset('js/jquery.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/common-scripts.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
   </body>
 </html>
