@@ -6,7 +6,7 @@ var alert_id = link.data('id');
 console.log(alert_id);
 	$.ajax({
 		type: 'GET',
-		url: '/map/' + alert_id,
+		url: '../map/' + alert_id,
 		dataType: 'json',
 		success: function(response){
 			$('#alert_map_modal').modal('show');
