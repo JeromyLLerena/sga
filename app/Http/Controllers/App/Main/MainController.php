@@ -28,18 +28,13 @@ class MainController extends Controller
 		return view('main.basic_tables')->with('alerts', $this->alert_management_service->all());
 	}
 
-		public function formComponent()
+	public function formComponent()
 	{
 		return view('main.form_component');
 	}
 
-		public function gallery()
+	public function gallery()
 	{
 		return view('main.gallery');
-	}
-
-		public function login()
-	{
-		return view('main.login');
 	}
 }
