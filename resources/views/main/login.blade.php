@@ -18,11 +18,12 @@
   <body>
     <div id="login-page">
       <div class="container">
-        <form class="form-login" action="dashboard">
+        <form class="form-login" action="{{route('login')}}" method="post">
           <h2 class="form-login-heading">SISTEMA DE GESTIÓN DE ALERTAS</h2>
           <div class="login-wrap">
-            <input type="text" class="form-control form-group" placeholder="User ID" autofocus>
-            <input type="password" class="form-control form-group" placeholder="Password">
+            <input name="user_id" type="text" class="form-control form-group" placeholder="ID Usuario" autofocus>
+            <input name="password" type="password" class="form-control form-group" placeholder="Contraseña">
+            {!!csrf_field()!!}
             <label class="checkbox">
               <span class="text-center">
                 <a data-toggle="modal" id="openBtn" href="login#myModal1">¿Te olvidaste el password?</a>                

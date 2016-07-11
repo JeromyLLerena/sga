@@ -20,8 +20,11 @@ Route::get('modal/{id}', function($id){
 	return view('alert.modal', ['id' => $id]);
 });
 
+Route::get('login', ['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
+Route::post('login', ['as' => 'login', 'uses' => 'Auth\AuthController@postLogin']);
+Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@logout', 'middleware' => 'verify.permissions']);
 
-Route::group(['as' => 'app', 'namespace' => 'App'], function(){
+Route::group(['as' => 'app', 'namespace' => 'App', 'middleware' => 'verify.permissions'], function(){
 	Route::group(['as' => '.firemans', 'prefix' => 'firemans', 'namespace' => 'Firemans'], function(){
 		Route::get('create', ['as' => '.create', 'uses' => 'FiremanController@showCreate']);
 		Route::post('create', ['as' => '.create', 'uses' => 'FiremanController@create']);
@@ -34,7 +37,6 @@ Route::group(['as' => 'app', 'namespace' => 'App'], function(){
 		Route::get('basic_tables', ['as' => '.basic_tables', 'uses' => 'MainController@basicTables']);
 		Route::get('form_component', ['as' => '.form_component', 'uses' => 'MainController@formComponent']);
 		Route::get('gallery', ['as' => '.gallery', 'uses' => 'MainController@gallery']);
-		Route::get('login', ['as' => '.login', 'uses' => 'MainController@login']);
 	});
 
 	Route::get('map/{alert_id}', ['as' => '.map', 'uses' => 'Alert\AlertController@showMap']);
