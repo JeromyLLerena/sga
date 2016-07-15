@@ -91,7 +91,7 @@ class AuthController extends Controller
 	{
 		if ($this->auth_service->verifyCredentials($request->get('user_id'), $request->get('password'))) {
 			$this->auth_service->authenticate($request->get('user_id'));
-			return redirect()->route('app.main.dashboard');
+			return redirect()->route('app.main');
 		} else {
 			return redirect()->back();
 		}

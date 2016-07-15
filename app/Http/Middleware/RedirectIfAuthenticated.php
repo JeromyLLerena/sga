@@ -24,7 +24,7 @@ class RedirectIfAuthenticated
         */
 
         if (Session::has('user')) {
-            return redirect()->route('app.main.dashboard');
+            return redirect()->route('app.main');
         }
 
         return $next($request);

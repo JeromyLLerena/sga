@@ -1,55 +1,116 @@
+@extends('layouts.app')
+@section('content')
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">NUevo usuario</h1>
+        </div>
+            <!-- /.col-lg-12 -->
+    </div>
+        <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                        Información básica
+                </div>
+                <div class="panel-body">
+                    <form role="form" method="POST" action="{{route('app.firemans.create')}}">
+                        {!! csrf_field() !!}
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-lg-4 col-lg-offset-4">
+                                    <div class="form-group">
+                                        ID de usuario
+                                        <input class="form-control" placeholder="id" name="id" type="text" autofocus value="{{old('id')}}">
+                                    </div>
+                                    <div class="form-group">
+                                        Nombre
+                                        <input class="form-control" placeholder="nombre" name="name" type="text" autofocus value="{{old('name')}}">
+                                    </div>
+                                    <div class="form-group">
+                                        Apellidos
+                                        <input class="form-control" placeholder="apellidos" name="last_name" type="text" autofocus value="{{old('last_name')}}">
+                                    </div>
+                                    <div class="form-group">
+                                        Teléfono
+                                        <input class="form-control" placeholder="telef" name="phone" type="text" autofocus value="{{old('phone')}}">
+                                    </div>
+                                    <div class="form-group">
+                                        Fecha de nacimiento
+                                        <div class="input-group date" data-provide="datepicker">
+                                            <input type="text" class="form-control" id="datepicker1" name="birthdate">
+                                            <div class="input-group-addon">
+                                                <span class="glyphicon glyphicon-th"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        Dirección
+                                        <input class="form-control" placeholder="direccion" name="direction" type="text" autofocus value="{{old('direction')}}">
+                                    </div>
+                                    <div class="form-group">
+                                        DNI
+                                        <input class="form-control" placeholder="" name="dni" type="text" autofocus value="{{old('dni')}}">
+                                    </div>
+                                    <div class="form-group" name="charge">
+                                        Cargo
+                                        <select class="form-control" name="charge">
+                                            @foreach($charges as $charge)
+                                                <option value="{{$charge->IN_ID_CARGO}}">{{$charge->VC_NOMBRE}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        Email
+                                        <input class="form-control" placeholder="example@domain.com" name="email" type="email" autofocus value="{{old('email')}}">
+                                    </div>
+                                    <div class="form-group">
+                                        Contraseña
+                                        <input class="form-control" id="password" name="password" type="password">
+                                    </div>
+                                    <div class="form-group">
+                                        Repetir contraseña
+                                        <input class="form-control" id="password_confirmation" name="password_confirmation" type="password">
+                                    </div>
+                                </div>
+                                <!-- /.col-lg-4 (nested) -->
+                            </div>
+                             <!-- /.row (nested) -->
+                            <div class="row col-lg-4 col-lg-offset-4">
+                                <div class="col-md-8">
+                                     <button type="submit" class="btn btn-success" name ="create" id="submit">
+                                        Crear nuevo usuario
+                                     </button>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="{{route('app.firemans.index')}}" class="btn btn-default">Cancelar</a>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- /.panel-body -->
+            </div>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+@stop
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-<form method="POST" class="form-horizontal" action="{{route('app.firemans.create')}}">
-	{!! csrf_field() !!}
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			Registrar bombero
-		</div>
-		<div class="panel-body">
-			<div class="form-group">
-				<label for="name" class="col-sm-2 col-sm-offset-2">Nombre</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="name" placeholder="Name" name="name">
-				</div>
-			</div>
+@section('extra_scripts')
 
-			<div class="form-group">
-				<label for="last_name" class="col-sm-2 col-sm-offset-2">Apellido</label>
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="last_name" placeholder="Last name" name="last_name">
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label for="email" class="col-sm-2 col-sm-offset-2">Email</label>
-				<div class="col-sm-6">
-					<input type="email" class="form-control" id="email" placeholder="Email" name="email">
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label for="password" class="col-sm-2 col-sm-offset-2">Contraseña</label>
-				<div class="col-sm-6">
-					<input type="password" class="form-control" id="password" name="password">
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label for="password_confirmation" class="col-sm-2 col-sm-offset-2">Confirmar contraseña</label>
-				<div class="col-sm-6">
-					<input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="col-sm-offset-4 col-sm-6">
-					<button type="submit" class="btn btn-default">Registro</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</form>
+@stop

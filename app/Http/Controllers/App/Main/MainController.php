@@ -25,7 +25,7 @@ class MainController extends Controller
 
 	public function basicTables()
 	{
-		return view('main.basic_tables')->with('alerts', $this->alert_management_service->all());
+		return view('alerts.index')->with('alerts', $this->alert_management_service->all());
 	}
 
 	public function formComponent()

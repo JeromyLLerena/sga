@@ -15,8 +15,12 @@ class UserRepository
 
 	public function all()
 	{
+
 		$users = $this->model->all()->transform(function($item, $key){
-			return (object) $item->toArray();
+			$temp = (object) $item->toArray();
+			$temp->fireman = $item->fireman ? (object) $item->fireman->toArray() : null;
+
+			return $temp;
 		});
 
 		return $users;
@@ -24,12 +28,10 @@ class UserRepository
 
 	public function save(\stdClass $input)
 	{
-		$alert = null;
-		if (property_exists($input, 'VC_ID_USUARIO')) {
-			$alert = $this->model->find($input->VC_ID_USUARIO);
-		} else {
-			$alert = $this->model;
-		}
+
+		$alert = $this->model;
+
+		$alert->VC_ID_USUARIO = $input->VC_ID_USUARIO;
 
 		if (property_exists($input, 'VC_CONTRASENIA')) {
 			$alert->VC_CONTRASENIA = $input->VC_CONTRASENIA;

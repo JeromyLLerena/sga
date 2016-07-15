@@ -18,7 +18,7 @@ class VerifyPermissions
 	{
 		if ($request->session()->has('user')) {
 			if ($request->route()->getName() == 'login') {
-				return redirect()->route('app.main.dashboard');
+				return redirect()->route('app.main');
 			}
 			return $next($request);
 		} else {
