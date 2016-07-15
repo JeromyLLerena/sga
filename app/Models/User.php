@@ -26,4 +26,10 @@ class User extends Authenticatable
     protected $hidden = [
         'VC_CONTRASENIA'
     ];
+
+    public function fireman()
+    {
+        return $this->hasOne('App\Models\Fireman', 'VC_ID_USUARIO');
+    }
+    public $timestamps = false;
 }

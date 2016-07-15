@@ -30,4 +30,9 @@ class AlertController extends Controller
 		return response()->json(["success" => true, "html" => $view]);
 		//return response()->view('main.map', ['coords' => $coords]);
 	}
+
+	public function index()
+	{
+		return view('alert.index')->with('alerts', $this->alert_management_service->all());
+	}
 }

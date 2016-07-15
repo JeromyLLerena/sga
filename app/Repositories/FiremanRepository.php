@@ -25,26 +25,50 @@ class FiremanRepository
 	public function save(\stdClass $input)
 	{
 		$user = null;
-		if (property_exists($input, 'id')) {
+		if (property_exists($input, 'IN_ID_BOMBERO')) {
 			$user = $this->model->find($input->id);
 		} else {
 			$user = $this->model;
 		}
 
-		if (property_exists($input, 'name')) {
-			$user->name = $input->name;
+		if (property_exists($input, 'VC_NOMBRE')) {
+			$user->VC_NOMBRE = $input->VC_NOMBRE;
 		}
 
-		if (property_exists($input, 'last_name')) {
-			$user->last_name = $input->last_name;
+		if (property_exists($input, 'VC_APELLIDO')) {
+			$user->VC_APELLIDO = $input->VC_APELLIDO;
 		}
 
-		if (property_exists($input, 'email')) {
-			$user->email = $input->email;
+		if (property_exists($input, 'VC_DIRECCION')) {
+			$user->VC_DIRECCION = $input->VC_DIRECCION;
 		}
 
-		if (property_exists($input, 'password')) {
-			$user->password = $input->password;
+		if (property_exists($input, 'VC_CORREO')) {
+			$user->VC_CORREO = $input->VC_CORREO;
+		}
+
+		if (property_exists($input, 'VC_TELEFONO')) {
+			$user->VC_TELEFONO = $input->VC_TELEFONO;
+		}
+
+		if (property_exists($input, 'VC_ID_USUARIO')) {
+			$user->VC_ID_USUARIO = $input->VC_ID_USUARIO;
+		}
+
+		if (property_exists($input, 'IN_DNI')) {
+			$user->IN_DNI = $input->IN_DNI;
+		}
+
+		if (property_exists($input, 'DT_FECHA_NACIMIENTO')) {
+			$user->DT_FECHA_NACIMIENTO = $input->DT_FECHA_NACIMIENTO;
+		}
+
+		if (property_exists($input, 'CH_ESTADO')) {
+			$user->CH_ESTADO = $input->CH_ESTADO;
+		}
+
+		if (property_exists($input, 'IN_ID_CARGO')) {
+			$user->IN_ID_CARGO = $input->IN_ID_CARGO;
 		}
 
 		$user->save();
