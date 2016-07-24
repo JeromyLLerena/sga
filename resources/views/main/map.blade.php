@@ -1,16 +1,39 @@
-<?php
-$config = array();
-$config['center'] = $coords[0] . ',' . $coords[1];
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body { height: 100%; margin: 0; padding: 0; }
+      #map { height: 100%; }
+    </style>
+  </head>
+  <body>
+    <div id="map" style="width:567px;height:400px"></div>
+    <script type="text/javascript">
+      var map;
+      var lat = {{$coords[0]}};
+      var lng = {{$coords[1]}};
 
-$config['onboundschanged'] = 'if (!centreGot) {var mapCentre = map.getCenter();marker_0.setOptions({position: new google.maps.LatLng(' . $coords[0] . ',' . $coords[1] . ')});}centreGot = true;';
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {
+            lat: lat,
+            lng: lng
+          },
+          zoom: 15
+        });
 
-    Gmaps::initialize($config);
-
-    // set up the marker ready for positioning
-    // once we know the users location
-    $marker = array();
-    Gmaps::add_marker($marker);
-
-    $map = Gmaps::create_map();
-    //var_dump($map);
-    echo "<html><head><script type='text/javascript'>var centreGot = false;</script>".$map['js']."</head><body>".$map['html']."</body></html>";
+        var marker = new google.maps.Marker({
+          position: {
+            lat: lat,
+            lng: lng
+          },
+          map: map,
+          title: 'Emergencia!'
+        });
+      }
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuW51eMMDSiepiPQQJgMBVdtcOFgNq4Fo&callback=initMap">
+    </script>
+  </body>
+</html>

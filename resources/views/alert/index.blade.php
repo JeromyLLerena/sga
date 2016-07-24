@@ -71,6 +71,7 @@
         </div>
         <!-- /.col-lg-12 -->
     </div>
+
 <!-- Modal -->
 <div id="alert_map_modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
