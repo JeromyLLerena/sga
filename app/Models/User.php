@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -11,8 +12,10 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table = 'TA_USUARIO';
+
     protected $fillable = [
-        'name', 'last_name', 'email', 'password',
+        'VC_CONTRASENIA', 'estado', 'IN_ID_ROL',
     ];
 
     /**
@@ -21,6 +24,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'VC_CONTRASENIA'
     ];
+
+    public function fireman()
+    {
+        return $this->hasOne('App\Models\Fireman', 'VC_ID_USUARIO');
+    }
+    public $timestamps = false;
 }
